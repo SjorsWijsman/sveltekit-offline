@@ -1,5 +1,5 @@
 <script>
-	import { localDB } from '$lib/db';
+	import { remoteDB } from '$lib/db';
 
 	let title = 'Test Title',
 		content = 'This is some content',
@@ -14,7 +14,7 @@
 			date,
 			source
 		});
-		localDB
+		remoteDB
 			.post({
 				title,
 				content,

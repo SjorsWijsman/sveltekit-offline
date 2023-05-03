@@ -3,13 +3,17 @@
 
 	export let listData;
 
-	console.log(listData.rows);
+	const rows = listData.rows
+		.map((item) => item.doc)
+		.sort((a, b) => {
+			return b.date - a.date;
+		});
 </script>
 
 <ul>
-	{#each listData?.rows as itemData}
+	{#each rows as itemData}
 		<li>
-			<NewsCard {...itemData.doc} />
+			<NewsCard {...itemData} />
 		</li>
 	{:else}
 		<li>You do not have any news.</li>
