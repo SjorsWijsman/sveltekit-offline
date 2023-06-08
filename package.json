@@ -25,6 +25,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@picocss/pico": "^2.0.0-alpha1",
 		"events": "^3.3.0",
 		"pouchdb": "^8.0.1"
 	}
