@@ -14,6 +14,9 @@ npm run dev -- --open
 
 # to start the database run the following in a separate terminal
 npm run db
+
+# access the database ui by going to
+http://localhost:5984/_utils/
 ```
 
 ## Building
