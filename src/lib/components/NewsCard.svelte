@@ -6,8 +6,26 @@
 	$: _id, _rev;
 </script>
 
-<h2>{title}</h2>
-<p>{content}</p>
-<p>{getRelativeTime(date)}</p>
-<p>{source}</p>
-<a href="/{_id}">Link</a>
+<article>
+	<h2>{title}</h2>
+	<p class="content">{content}</p>
+	<p>{getRelativeTime(date)}</p>
+	<p>{source}</p>
+	<a href="/{_id}">Link</a>
+</article>
+
+<style>
+	h2 {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	p.content {
+		display: -webkit-box;
+		-webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+</style>

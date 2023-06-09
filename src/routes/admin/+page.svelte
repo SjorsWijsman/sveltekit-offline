@@ -33,24 +33,18 @@
 
 <h1>Admin</h1>
 <hr />
-<ul>
-	<li>
-		<label>
-			title
-			<input bind:value={title} />
-		</label>
-	</li>
-	<li>
-		<label>
-			content
-			<textarea bind:value={content} />
-		</label>
-	</li>
-	<li>
-		<label>
-			source
-			<input bind:value={source} />
-		</label>
-	</li>
-</ul>
-<button on:click={addNews}>Add News</button>
+<form>
+	<label>
+		Title
+		<input bind:value={title} />
+	</label>
+	<label>
+		Content
+		<textarea bind:value={content} />
+	</label>
+	<label>
+		Source
+		<input bind:value={source} />
+	</label>
+	<button on:click={addNews}>Add News</button>
+</form>

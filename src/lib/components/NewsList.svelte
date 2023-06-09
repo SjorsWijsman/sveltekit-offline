@@ -10,19 +10,8 @@
 		});
 </script>
 
-<ul>
-	{#each rows as itemData}
-		<li>
-			<NewsCard {...itemData} />
-		</li>
-	{:else}
-		<li>You do not have any news.</li>
-	{/each}
-</ul>
-
-<style>
-	ul {
-		list-style: none;
-		padding: 0;
-	}
-</style>
+{#each rows as itemData}
+	<NewsCard {...itemData} />
+{:else}
+	<p>You do not have any news.</p>
+{/each}
