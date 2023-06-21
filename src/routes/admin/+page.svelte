@@ -1,5 +1,5 @@
 <script>
-	import { remoteDB } from '$lib/db';
+	import { localDB, remoteDB } from '$lib/db';
 
 	let title = 'Test Title',
 		content = 'This is some content',
@@ -8,13 +8,15 @@
 
 	function addNews() {
 		date = Date.now();
+
 		console.log({
 			title,
 			content,
 			date,
 			source
 		});
-		remoteDB
+
+		localDB
 			.post({
 				title,
 				content,
@@ -28,6 +30,8 @@
 			.catch(function (err) {
 				console.log(err);
 			});
+
+		remoteDB.replicate.from(localDB);
 	}
 </script>
 

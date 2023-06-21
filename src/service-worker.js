@@ -7,12 +7,11 @@ const ASSETS = [
 	...build, // the app itself
 	...files, // everything in `static`
 	'/',
+	'/news',
 	'/share',
 	'/user',
 	'/admin'
 ];
-
-const DATABASE = 'localhost:5984';
 
 self.addEventListener('install', (event) => {
 	console.log(build);
@@ -43,12 +42,6 @@ self.addEventListener('fetch', (event) => {
 
 	async function respond() {
 		const url = new URL(event.request.url);
-
-		// ignore requests to the DATABASE
-		if (url.host === DATABASE) return;
-
-		// console.log(url);
-		// console.log(url.pathname.split('/')[1]);
 
 		const cache = await caches.open(CACHE);
 
