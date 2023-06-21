@@ -5,7 +5,7 @@
 <header>
 	<nav>
 		<ul>
-			<li><a href="/">News</a></li>
+			<li><a href="/news">News</a></li>
 			<li><a href="/share">Share</a></li>
 			<li><a href="/user">User</a></li>
 		</ul>

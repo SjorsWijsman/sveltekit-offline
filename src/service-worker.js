@@ -44,7 +44,11 @@ self.addEventListener('fetch', (event) => {
 	async function respond() {
 		const url = new URL(event.request.url);
 
+		// ignore requests to the DATABASE
 		if (url.host === DATABASE) return;
+
+		// console.log(url);
+		// console.log(url.pathname.split('/')[1]);
 
 		const cache = await caches.open(CACHE);
 
@@ -52,9 +56,6 @@ self.addEventListener('fetch', (event) => {
 		if (ASSETS.includes(url.pathname)) {
 			return cache.match(url.pathname);
 		}
-
-		console.log(url);
-		console.log(url.pathname.split('/')[1]);
 
 		// for everything else, try the network first, but
 		// fall back to the cache if we're offline

@@ -11,7 +11,7 @@
 	<p class="content">{content}</p>
 	<p>{getRelativeTime(date)}</p>
 	<p>{source}</p>
-	<a href="/{_id}">Link</a>
+	<a href="?a={_id}">Open</a>
 </article>
 
 <style>

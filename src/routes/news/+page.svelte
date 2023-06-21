@@ -6,11 +6,14 @@
 	import NewsItem from '$lib/components/NewsItem.svelte';
 
 	if (browser) localDB.replicate.from(remoteDB);
+
+	let selectedArticle;
+	$: if (browser) selectedArticle = $page.url.searchParams.get('a');
 </script>
 
 <h1>News</h1>
 <hr />
-{#if !$page.params.id && browser}
+{#if !selectedArticle && browser}
 	{#await localDB.allDocs({ include_docs: true })}
 		<p>Retrieving News...</p>
 	{:then listData}
@@ -19,5 +22,5 @@
 		<p style="color: red">{error.message}</p>
 	{/await}
 {:else}
-	<NewsItem _id={$page.params.id} />
+	<NewsItem _id={selectedArticle} />
 {/if}
