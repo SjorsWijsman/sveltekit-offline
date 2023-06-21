@@ -1,6 +1,6 @@
 <script>
-	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
 	import { localDB, remoteDB } from '$lib/db';
 	import NewsList from '$lib/components/NewsList.svelte';
 	import NewsItem from '$lib/components/NewsItem.svelte';

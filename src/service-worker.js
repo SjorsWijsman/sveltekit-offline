@@ -12,6 +12,8 @@ const ASSETS = [
 	'/admin'
 ];
 
+const DATABASE = 'localhost:5984';
+
 self.addEventListener('install', (event) => {
 	console.log(build);
 	// Create a new cache and add all files to it
@@ -41,12 +43,18 @@ self.addEventListener('fetch', (event) => {
 
 	async function respond() {
 		const url = new URL(event.request.url);
+
+		if (url.host === DATABASE) return;
+
 		const cache = await caches.open(CACHE);
 
 		// `build`/`files` can always be served from the cache
 		if (ASSETS.includes(url.pathname)) {
 			return cache.match(url.pathname);
 		}
+
+		console.log(url);
+		console.log(url.pathname.split('/')[1]);
 
 		// for everything else, try the network first, but
 		// fall back to the cache if we're offline
