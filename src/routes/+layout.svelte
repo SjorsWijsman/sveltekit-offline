@@ -9,6 +9,9 @@
 			<li><a href="/share">Share</a></li>
 			<li><a href="/user">User</a></li>
 		</ul>
+		<ul>
+			<li><a href="/admin" role="button">Add News</a></li>
+		</ul>
 	</nav>
 </header>
 <main>

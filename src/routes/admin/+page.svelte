@@ -4,7 +4,7 @@
 	let title = 'Test Title',
 		content = 'This is some content',
 		date,
-		source = 'Me. Trust me bro.';
+		source = 'Me';
 
 	function addNews() {
 		date = Date.now();
